@@ -1,0 +1,18 @@
+body {
+    font-family: sans-serif;
+    background-color: #FAFAFA;
+}
+
+a {
+    color: #3D85C6;
+}
+a:visited {
+    color: #674ea7;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #050505;
+        color: #FAFAFA;
+    }
+}

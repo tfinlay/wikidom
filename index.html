@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WikiDom (extension-free DNS over Wikipedia)</title>
+
+    <script src="index.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="main.css"/>
+
+    <link
+            rel="search"
+            type="application/opensearchdescription+xml"
+            title="WikiDom: By @tfinlay"
+            href="opensearch.xml" />
+</head>
+<body>
+
+<h1>WikiDom by <a href="https://tfinlay.io">@tfinlay</a></h1>
+<p>
+    An "I'm feeling lucky"-style search engine that takes the name of a website and redirects you to the website itself using the power of Wikipedia.
+</p>
+<p>
+    Inspired by <a href="https://github.com/aaronjanse">@aaronjanse</a>'s
+    WebExtension implementation (<a href="https://github.com/aaronjanse/dns-over-wikipedia">dns-over-wikipedia</a>)
+    and <a href="https://news.ycombinator.com/item?id=33830759">discussion on Hacker News</a>.
+    The primary differentiator is that this implementation requires no extension to be installed.
+</p>
+
+<h3>Explanation</h3>
+<p>
+    Wikipedia articles often contain official URLs of websites.
+    This website allows you to provide the name of an article, and will automatically look up the URL associated with that name in Wikipedia.
+    If one is found, you will be redirected to that URL!<br/>
+</p>
+<p>
+    Obviously, since it's Wikipedia, the URL you're directed to cannot be guaranteed to be correct all the time, so use at your own risk!
+</p>
+
+<h3>Usage</h3>
+<p>
+    To begin using this site, simply add <code>#q=&lt;your query here&gt;</code> on to the end of the current URL.
+</p>
+<p>
+    For example, to search for "Hacker News", go to <code id="example_hn"></code>, which will correctly redirect you to <code>https://news.ycombinator.com/</code>
+</p>
+
+<h4>Convenience</h4>
+<p>
+    If you want to start using this site more regularly, you can add this site as a search engine to integrate it more into your browser.<br/>
+    In some browsers, you can then choose to search with this alternate search engine some of the time.
+</p>
+
+<p>
+    Firefox:
+    <ol>
+        <li>Add this page as a search engine by following <a href="https://support.mozilla.org/en-US/kb/add-or-remove-search-engine-firefox#w_add-a-search-engine-from-the-address-bar">these instructions</a>.</li>
+        <li>Optionally, go to search settings, choose WikiDom, and double click on the "Keyword" cell next to it to assign it to a keyword (e.g. <code>wikidom</code>)</li>
+        <li>Then, to search with WikiDom instead of your default search engine, type @wikidom before your query. If you chose not to assign it a keyword, you can also select it through the GUI.</li>
+    </ol>
+</p>
+<p>
+    Other browsers: I don't know a nice built-in way to do this (<a href="https://tfinlay.io/#contact">please let me know if you do!</a>), so I suggest adding the link below to your bookmarks bar. You can click it on non-protected pages to search!<br/>
+    <a href="javascript:(()=>{const query=prompt('What would you like to search with WikiDom?'); if (query){window.open('https://wikidom.tfinlay.io/#q=' + encodeURIComponent(query))} })()">WikiDom Quick Search</a>
+</p>
+
+<script type="text/javascript">
+    document.getElementById("example_hn").innerText = window.location.toString().split(/#/, 1)[0] + "#q=Hacker%20News";
+</script>
+
+<h3>Miscellaneous</h3>
+
+<p>
+    My apologies for the very basic design of the website, feel free to contribute something nicer
+</p>
+
+</body>
+</html>

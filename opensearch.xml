@@ -1,0 +1,9 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+                       xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+    <ShortName>WikiDom</ShortName>
+    <Description>Wikipedia-based domain look up. Search for a name, and we'll redirect you to the URL listed in its Wikipedia article (if any)</Description>
+    <InputEncoding>UTF-8</InputEncoding>
+    <Image width="16" height="16" type="image/x-icon">https://wikidom.tfinlay.io/favicon.ico</Image>
+    <Url type="text/html" template="https://wikidom.tfinlay.io/#q={searchTerms}"/>
+    <moz:SearchForm>https://wikidom.tfinlay.io/</moz:SearchForm>
+</OpenSearchDescription>
