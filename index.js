@@ -1,5 +1,17 @@
 'use strict';
 
+const statusBar = document.getElementById('statusBar');
+
+const setStatus = (status) => {
+    if (status) {
+        statusBar.style.display = 'block';
+        statusBar.innerText = status;
+    }
+    else {
+        statusBar.style.display = 'none';
+    }
+};
+
 const parseUrlParams = () => {
     if (!location.hash) {
         return new Map();
@@ -72,13 +84,17 @@ const findRedirectUrlForWikiArticle = async (articleId) => {
     return url;
 };
 
-(async () => {
+const execute = async () => {
+    setStatus("Starting...")
+
     const params = parseUrlParams();
     console.log("Starting with parameters", params);
 
     if (params.has('q')) {
         // We have a query!
         // DNS redirect time.
+
+        setStatus("Finding article...")
 
         if (params.get('q').toLowerCase() === 'rick astley') {
             window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", '_self');
@@ -87,11 +103,27 @@ const findRedirectUrlForWikiArticle = async (articleId) => {
 
         const articleUrl = await searchForWikiArticle(params.get('q'));
         if (articleUrl !== null) {
+            setStatus("Finding URL for article...");
+
             const redirectUrl = await findRedirectUrlForWikiArticle(articleUrl);
             console.log("Found redirect URL", redirectUrl);
             if (redirectUrl) {
+                setStatus("Redirecting!")
                 window.open(redirectUrl, '_self');
             }
+            else {
+                setStatus("No URL found for that article.")
+            }
+        }
+        else {
+            setStatus("No article found with that name.")
         }
     }
+    else {
+        setStatus(null);
+    }
+}
+
+(async () => {
+    await execute();
 })();

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>WikiDom (extension-free DNS over Wikipedia)</title>
 
-    <script src="index.js" type="text/javascript"></script>
+    <script src="index.js" type="text/javascript" defer></script>
     <link rel="stylesheet" type="text/css" href="main.css"/>
 
     <link
@@ -15,6 +15,8 @@
 </head>
 <body>
 
+<div id="statusBar"></div>
+
 <h1>WikiDom by <a href="https://tfinlay.io">@tfinlay</a></h1>
 <p>
     An "I'm feeling lucky"-style search engine that takes the name of a website and redirects you to the website itself using the power of Wikipedia.
@@ -23,7 +25,7 @@
     Inspired by <a href="https://github.com/aaronjanse">@aaronjanse</a>'s
     WebExtension implementation (<a href="https://github.com/aaronjanse/dns-over-wikipedia">dns-over-wikipedia</a>)
     and <a href="https://news.ycombinator.com/item?id=33830759">discussion on Hacker News</a>.
-    The primary differentiator is that this implementation requires no extension to be installed.
+    The primary differentiator is that this implementation doesn't require any extensions.
 </p>
 
 <h3>Explanation</h3>

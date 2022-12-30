@@ -22,9 +22,31 @@ footer span {
     line-height: 1em;
 }
 
+#statusBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 8px;
+    box-sizing: border-box;
+    width: 100%;
+}
+#statusBar.active {
+    display: block;
+}
+
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #050505;
         color: #FAFAFA;
+    }
+
+    #statusBar {
+        background-color: white;
+        color: black;
     }
 }
