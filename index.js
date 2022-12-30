@@ -79,6 +79,12 @@ const findRedirectUrlForWikiArticle = async (articleId) => {
     if (params.has('q')) {
         // We have a query!
         // DNS redirect time.
+
+        if (params.get('q').toLowerCase() === 'rick astley') {
+            window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", '_self');
+            return;
+        }
+
         const articleUrl = await searchForWikiArticle(params.get('q'));
         if (articleUrl !== null) {
             const redirectUrl = await findRedirectUrlForWikiArticle(articleUrl);

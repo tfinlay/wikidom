@@ -31,6 +31,7 @@
     Wikipedia articles often contain official URLs of websites.
     This website allows you to provide the name of an article, and will automatically look up the URL associated with that name in Wikipedia.
     If one is found, you will be redirected to that URL!<br/>
+    All of this is done in your browser, so information about your search queries is not visible to me.
 </p>
 <p>
     Obviously, since it's Wikipedia, the URL you're directed to cannot be guaranteed to be correct all the time, so use at your own risk!
@@ -53,13 +54,13 @@
 <p>
     Firefox:
     <ol>
-        <li>Add this page as a search engine by following <a href="https://support.mozilla.org/en-US/kb/add-or-remove-search-engine-firefox#w_add-a-search-engine-from-the-address-bar">these instructions</a>.</li>
+        <li>Add this page as a search engine by following <a href="https://support.mozilla.org/en-US/kb/add-or-remove-search-engine-firefox#w_add-a-search-engine-from-the-address-bar" target="_blank">these instructions</a>.</li>
         <li>Optionally, go to search settings, choose WikiDom, and double click on the "Keyword" cell next to it to assign it to a keyword (e.g. <code>wikidom</code>)</li>
         <li>Then, to search with WikiDom instead of your default search engine, type @wikidom before your query. If you chose not to assign it a keyword, you can also select it through the GUI.</li>
     </ol>
 </p>
 <p>
-    Other browsers: I don't know a nice built-in way to do this (<a href="https://tfinlay.io/#contact">please let me know if you do!</a>), so I suggest adding the link below to your bookmarks bar. You can click it on non-protected pages to search!<br/>
+    Other browsers: I don't know a nice built-in way to do this (<a href="https://github.com/tfinlay/wikidom/issues/1">please let me know if you do!</a>), so I suggest adding the link below to your bookmarks bar. You can click it on non-protected pages to search!<br/>
     <a href="javascript:(()=>{const query=prompt('What would you like to search with WikiDom?'); if (query){window.open('https://wikidom.tfinlay.io/#q=' + encodeURIComponent(query))} })()">WikiDom Quick Search</a>
 </p>
 
@@ -70,8 +71,17 @@
 <h3>Miscellaneous</h3>
 
 <p>
-    My apologies for the very basic design of the website, feel free to contribute something nicer
+    This project is open source and contributions are welcome! <a href="https://github.com/tfinlay/wikidom">Visit the repository</a>.<br/>
+    You can also see some of my other projects on my main website <a href="https://tfinlay.io">here</a>.
 </p>
 
+<p>
+    This project (as you may be able to tell) is currently in its early stages. I am hoping to improve things in the future - suggestions are always welcome.
+</p>
+
+<footer>
+    <span>Made with ❤ by <a href="https://github.com/tfinlay" target="_blank">Thomas Finlay</a></span>
+    <span><a href="https://github.com/tfinlay/wikidom" target="_blank">Contributions welcome!</a></span>
+</footer>
 </body>
 </html>

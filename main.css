@@ -10,6 +10,18 @@ a:visited {
     color: #674ea7;
 }
 
+footer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 8px;
+}
+
+footer span {
+    line-height: 1em;
+}
+
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #050505;
